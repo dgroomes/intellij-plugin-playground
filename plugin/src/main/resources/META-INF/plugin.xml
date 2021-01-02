@@ -1,0 +1,23 @@
+<idea-plugin>
+
+  <id>dgroomes.helloWorldPlugin</id>
+  <name>Hello World</name>
+  <depends>com.intellij.modules.platform</depends>
+
+  <description>
+    <![CDATA[
+      This plugin simply shows a "Hello World" message. It is a "do-nothing" plugin that I'm using to learn about
+      Intellij plugin development<br>
+      See the project in GitHub:
+      <a href="https://github.com/dgroomes/intellij-plugin-playground">intellij-plugin-playground</a>
+    ]]>
+  </description>
+
+  <vendor url="https://github.com/dgroomes">https://github.com/dgroomes</vendor>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <toolWindow id="Hello World Plugin:" secondary="true" icon="AllIcons.General.Modified" anchor="right"
+                factoryClass="dgroomes.HelloWorldPlugin"/>
+  </extensions>
+
+</idea-plugin>

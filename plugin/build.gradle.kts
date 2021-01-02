@@ -1,5 +1,6 @@
 plugins {
     `java-library`
+    id("org.jetbrains.intellij") version "0.6.5" // latest release: https://github.com/JetBrains/gradle-intellij-plugin/releases
 }
 
 repositories {
@@ -18,6 +19,26 @@ dependencies {
     testImplementation("org.junit.jupiter:junit-jupiter-api:$junitJupiterVersion")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:$junitJupiterVersion")
     testImplementation("org.assertj:assertj-core:$assertJVersion")
+}
+
+java {
+
+    /**
+     * Use Java 11
+     * Note: It's important to use the same version of Java that powers Intellij. We don't want to develop a plugin using
+     * Java 15 only to find out that Intellij can't run it because Intellij uses Java 11.
+     */
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(11))
+    }
+}
+
+intellij {
+
+    /**
+     * When I try "2020.3" or "2020.3.1" it throws a Kotlin-related exception. I dont' know why.
+     */
+    version = "2020.2"
 }
 
 tasks {

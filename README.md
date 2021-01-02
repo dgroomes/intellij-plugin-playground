@@ -1,22 +1,17 @@
 # intellij-plugin-playground
 
-NOT YET IMPLEMENTED
-
 📚 Learning and exploring Intellij IDEA plugin development.
 
 ## Design
 
-TBD (Not really sure how to structure it right now).
+This project implements a simple "Hello World" Intellij plugin in the `plugin/` sub-project.
 
-The core source code of the Intellij plugin is in the Gradle sub-project `plugin/`.
+What does this plugin do? When the plugin is enabled in Intellij, it creates a ["Tool window"](https://jetbrains.org/intellij/sdk/docs/user_interface_components/tool_windows.html)
+that simply says "Hello World".
 
 ## Instructions
 
-* Use Java 11
-  * Note: It's important to use the same version of Java that powers Intellij. We don't want to developer a plugin using
-    Java 15 only to find out that Intellij can't run it because Intellij uses Java 11.
 * Run the tests with `./gradlew test`
-* TBD
 
 ## TODO
 
@@ -24,8 +19,9 @@ The core source code of the Intellij plugin is in the Gradle sub-project `plugin
 * DONE Runnable "do-nothing" junit tests 
 * DONE First commit
 * DONE link to referenced materials (Intellij SDK docs)
-* Wire in some plugin boilerplate build stuff (Gradle, xml files, not really sure where to start...) 
-* implement a "hello world" plugin
+* DONE Wire in some plugin boilerplate build stuff (Gradle, xml files, not really sure where to start...) 
+* DONE implement a "hello world" plugin
+* Make the plugin behavior interactive. For example, it could respond to click events.
 
 ### Reference materials
 
@@ -35,4 +31,10 @@ The core source code of the Intellij plugin is in the Gradle sub-project `plugin
     naive (i.e. something simple that doesn't really bring a lot of value necessarily!) plugin that integrates JShell in
     Intellij 
 * [Official example repo: `intellij-sdk-code-samples`](https://github.com/JetBrains/intellij-sdk-code-samples)
-  * Note: I haven't tried this yet but it seems like a great resource of executable examples.
+  * This is a great resource of working examples. Run them yourself and learn from them!
+* [Official Intellij Gradle plugin](https://github.com/JetBrains/gradle-intellij-plugin/)
+  * This should be used to build your own Intellij IDE plugin.
+* [The Java Tutorials: *Creating a GUI With JFC/Swing*](https://docs.oracle.com/javase/tutorial/uiswing/)
+* [Intellij docs: *GUI Designer Basics*](https://www.jetbrains.com/help/idea/gui-designer-basics.html)
+  * The Intellij GUI Designer is used for authoring the GUI components of an Intellij plugin (technically, I don't think
+    it is required, but naturally, the Intellij GUI Designer is effective for making Intellij plugins :smile:).
