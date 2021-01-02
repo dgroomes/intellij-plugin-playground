@@ -1,8 +1,11 @@
 package dgroomes;
 
-import com.intellij.openapi.wm.ToolWindow;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.swing.*;
+import javax.swing.event.MouseInputAdapter;
+import java.awt.event.MouseEvent;
 
 /**
  * The "binding class" for our plugin's custom Intellij "tool window".
@@ -22,16 +25,25 @@ import javax.swing.*;
  */
 public class HelloWorldWindow {
 
-    private JLabel message;
+    private static final Logger log = LoggerFactory.getLogger(HelloWorldWindow.class);
+
+    private String messageString = "Hello World!";
+    private JLabel messageLabel;
     private JPanel root;
 
-    public HelloWorldWindow(ToolWindow toolWindow) {
-        this.setMessage("uninitialized");
+    public HelloWorldWindow() {
+        root.addMouseListener(new MouseInputAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                log.info("The plugin window was clicked!");
+                messageString += "!";
+                HelloWorldWindow.this.messageLabel.setText(messageString);
+                super.mouseClicked(e);
+            }
+        });
+        this.messageLabel.setText(messageString);
     }
 
-    public void setMessage(String message) {
-        this.message.setText(message);
-    }
 
     public JPanel getRootElement() {
         return root;

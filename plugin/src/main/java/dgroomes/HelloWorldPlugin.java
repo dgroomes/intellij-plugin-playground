@@ -17,17 +17,12 @@ public class HelloWorldPlugin implements ToolWindowFactory {
         contentFactory = ContentFactory.SERVICE.getInstance();
     }
 
-    public String sayHello() {
-        return "Hello world!";
-    }
-
     /**
      * This wires the plugin code to the IDE.
      */
     @Override
     public void createToolWindowContent(@NotNull Project project, @NotNull ToolWindow toolWindow) {
-        var window = new HelloWorldWindow(toolWindow);
-        window.setMessage(sayHello());
+        var window = new HelloWorldWindow();
 
         var content = contentFactory.createContent(window.getRootElement(), "", false);
         toolWindow.getContentManager().addContent(content);

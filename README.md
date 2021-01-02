@@ -11,7 +11,9 @@ that simply says "Hello World".
 
 ## Instructions
 
-* Run the tests with `./gradlew test`
+* `./gradlew runIde`
+  * This will start a new instance of Intellij Community Edition with the plugin installed and enabled. This is a super
+    convenient task provided by the `gradle-intellij-plugin` Gradle plugin.
 
 ## TODO
 
@@ -21,7 +23,7 @@ that simply says "Hello World".
 * DONE link to referenced materials (Intellij SDK docs)
 * DONE Wire in some plugin boilerplate build stuff (Gradle, xml files, not really sure where to start...) 
 * DONE implement a "hello world" plugin
-* Make the plugin behavior interactive. For example, it could respond to click events.
+* DONE Make the plugin behavior interactive. For example, it could respond to click events.
 
 ### Reference materials
 
