@@ -4,8 +4,7 @@ plugins {
 }
 
 repositories {
-    mavenLocal()
-    jcenter()
+    mavenCentral()
 }
 
 val slf4jVersion = "1.7.30" // releases: http://www.slf4j.org/news.html
@@ -29,8 +28,5 @@ java {
 
 intellij {
 
-    /**
-     * When I try "2020.3" or "2020.3.1" it throws a Kotlin-related exception. I dont' know why.
-     */
-    version = "2020.2"
+    version = "2020.3.2"
 }
