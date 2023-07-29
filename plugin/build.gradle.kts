@@ -1,17 +1,15 @@
 plugins {
     `java-library`
-    id("org.jetbrains.intellij") version "1.15.0" // Gradle Intellij Plugin releases: https://github.com/JetBrains/gradle-intellij-plugin/releases
+    alias(libs.plugins.gradle.intellij.plugin)
 }
 
 repositories {
     mavenCentral()
 }
 
-val slf4jVersion = "2.0.7" // SLF4J releases: http://www.slf4j.org/news.html
-
 dependencies {
-    // SLF4J is already present in Intellij at runtime
-    compileOnly("org.slf4j:slf4j-api:$slf4jVersion")
+    // SLF4J is already present in Intellij at runtime, so we only need it at compile time
+    compileOnly(libs.slf4j.api)
 }
 
 java {
