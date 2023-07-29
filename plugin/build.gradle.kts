@@ -1,13 +1,13 @@
 plugins {
     `java-library`
-    id("org.jetbrains.intellij") version "0.6.5" // latest release: https://github.com/JetBrains/gradle-intellij-plugin/releases
+    id("org.jetbrains.intellij") version "1.15.0" // Gradle Intellij Plugin releases: https://github.com/JetBrains/gradle-intellij-plugin/releases
 }
 
 repositories {
     mavenCentral()
 }
 
-val slf4jVersion = "1.7.30" // releases: http://www.slf4j.org/news.html
+val slf4jVersion = "2.0.7" // SLF4J releases: http://www.slf4j.org/news.html
 
 dependencies {
     // SLF4J is already present in Intellij at runtime
@@ -17,16 +17,15 @@ dependencies {
 java {
 
     /**
-     * Use Java 11
+     * Use Java 17
      * Note: It's important to use the same version of Java that powers Intellij. We don't want to develop a plugin using
-     * Java 15 only to find out that Intellij can't run it because Intellij uses Java 11.
+     * Java 20 only to find out that Intellij can't run it because Intellij uses Java 17.
      */
     toolchain {
-        languageVersion.set(JavaLanguageVersion.of(11))
+        languageVersion.set(JavaLanguageVersion.of(17))
     }
 }
 
 intellij {
-
-    version = "2020.3.2"
+    version.set("2023.1.5")
 }
