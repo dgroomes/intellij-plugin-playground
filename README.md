@@ -28,7 +28,7 @@ Follow these instructions to build and use the plugin:
 
 General clean-ups, TODOs and things I wish to implement for this project:
 
-* [ ] IN PROGRESS Update this project for 2023.
+* [x] DONE Update this project for 2023.
 * [ ] Can I make a plugin that extends the [HTTP client support in Intellij](https://www.jetbrains.com/help/idea/http-client-in-product-code-editor.html)?
   The HTTP client tooling in Intellij (e.g. `.http` files) is more sophisticated than I knew and I get the impression
   that it's more polished than I would have expected. They added lots more features in the Intellij IDEA 2023.2 release.
