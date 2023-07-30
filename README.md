@@ -3,25 +3,21 @@
 📚 Learning and exploring Intellij IDEA plugin development.
 
 
-## Overview
+## Standalone subprojects
 
-This project implements a simple "Hello World" Intellij plugin in the `plugin/` sub-project.
+This repository illustrates different concepts, patterns and examples via standalone subprojects. Each subproject is
+completely independent of the others and do not depend on the root project. This _standalone subproject constraint_
+forces the subprojects to be complete and maximizes the reader's chances of successfully running, understanding, and
+re-using the code.
 
-What does this plugin do? When the plugin is enabled in Intellij, it creates a ["Tool window"](https://jetbrains.org/intellij/sdk/docs/user_interface_components/tool_windows.html)
-that simply says "Hello World".
+The subprojects include:
 
 
-## Instructions
+### `hello-world-plugin/`
 
-Follow these instructions to build and use the plugin:
+A simple "Hello World" Intellij plugin.
 
-1. Use Java 17
-2. Build the plugin and run it
-   * ```shell
-     ./gradlew runIde
-     ```
-   * This will start a new instance of Intellij Community Edition with the plugin installed and enabled. This is a super
-     convenient task provided by the `gradle-intellij-plugin` Gradle plugin.
+See the README in [hello-world-plugin/](hello-world-plugin/).
 
 
 # Wish List
@@ -43,7 +39,7 @@ General clean-ups, TODOs and things I wish to implement for this project:
      client plugin and adds customizations and quality-of-life improvements when interacting with the GitHub API.
      Specifically, I want the plugin prompt you for a personal access token (or maybe save it to some kind of Intellij
      credential store? That might be pushing it.)
-   * Rename the `plugin` project to `hello-world-plugin` to disambiguate it. And use the "Standalone subprojects" motto.
+   * DONE Rename the `plugin` project to `hello-world-plugin` to disambiguate it. And use the "Standalone subprojects" motto.
    * Create an example `.http` request (or a few) to the GitHub API
    * Prompt the user to enter a PAT (a modal?)
    * What are the "lifecycle choices"? Where are the idiomatic places to plug-in to the lifecycle of the request, or maybe
@@ -69,7 +65,3 @@ General clean-ups, TODOs and things I wish to implement for this project:
   * This is a great resource of working examples. Run them yourself and learn from them!
 * [Official Intellij Gradle plugin](https://github.com/JetBrains/gradle-intellij-plugin/)
   * This should be used to build your own Intellij IDE plugin.
-* [The Java Tutorials: *Creating a GUI With JFC/Swing*](https://docs.oracle.com/javase/tutorial/uiswing/)
-* [Intellij docs: *GUI Designer Basics*](https://www.jetbrains.com/help/idea/gui-designer-basics.html)
-  * The Intellij GUI Designer is used for authoring the GUI components of an Intellij plugin (technically, I don't think
-    it is required, but naturally, the Intellij GUI Designer is effective for making Intellij plugins :smile:).

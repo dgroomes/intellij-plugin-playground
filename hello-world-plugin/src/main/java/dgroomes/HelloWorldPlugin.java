@@ -14,7 +14,7 @@ public class HelloWorldPlugin implements ToolWindowFactory {
     private final ContentFactory contentFactory;
 
     public HelloWorldPlugin() {
-        contentFactory = ContentFactory.SERVICE.getInstance();
+        contentFactory = ContentFactory.getInstance();
     }
 
     /**
