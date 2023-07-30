@@ -29,7 +29,7 @@ Follow these instructions to build and use the plugin:
 General clean-ups, TODOs and things I wish to implement for this project:
 
 * [x] DONE Update this project for 2023.
-* [ ] Can I make a plugin that extends the [HTTP client support in Intellij](https://www.jetbrains.com/help/idea/http-client-in-product-code-editor.html)?
+* [ ] (UPDATE: I made a lot of progress. Putting it in a branch for now) Can I make a plugin that extends the [HTTP client support in Intellij](https://www.jetbrains.com/help/idea/http-client-in-product-code-editor.html)?
   The HTTP client tooling in Intellij (e.g. `.http` files) is more sophisticated than I knew and I get the impression
   that it's more polished than I would have expected. They added lots more features in the Intellij IDEA 2023.2 release.
   The momentum is strong. I really like Insomnia, but I've always struggled to share HTTP requests with others. If I can
@@ -38,7 +38,17 @@ General clean-ups, TODOs and things I wish to implement for this project:
   is "low friction and secure access key management". I need to be able to use the HTTP client tooling in Intellij and
   not have to worry about accidentally committing my credentials and not have to hassle with manually copy/pasting my
   credentials too much (Insomnia's Auth tab is amazing). Can I create an Intellij plugin that injects the HTTP client
-  state with something (like a credential)? I kind of doubt it.
+  state with something (like a credential)? I kind of doubt it. UPDATE: yes it's totally possible.
+   * Scaffold a `http-client-github-plugin` subproject. This will showcase an Intellij plugin that works with the HTTP
+     client plugin and adds customizations and quality-of-life improvements when interacting with the GitHub API.
+     Specifically, I want the plugin prompt you for a personal access token (or maybe save it to some kind of Intellij
+     credential store? That might be pushing it.)
+   * Rename the `plugin` project to `hello-world-plugin` to disambiguate it. And use the "Standalone subprojects" motto.
+   * Create an example `.http` request (or a few) to the GitHub API
+   * Prompt the user to enter a PAT (a modal?)
+   * What are the "lifecycle choices"? Where are the idiomatic places to plug-in to the lifecycle of the request, or maybe
+     the lifecycle of just opening the project? Can the JavaScript part of the lifecycle (pre-request handler) actually
+     callback into Java or is that too late?
 * [x] DONE clean up scaffolded gradle project
 * [x] DONE Runnable "do-nothing" junit tests 
 * [x] DONE First commit
