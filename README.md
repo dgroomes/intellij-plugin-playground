@@ -35,16 +35,18 @@ General clean-ups, TODOs and things I wish to implement for this project:
   not have to worry about accidentally committing my credentials and not have to hassle with manually copy/pasting my
   credentials too much (Insomnia's Auth tab is amazing). Can I create an Intellij plugin that injects the HTTP client
   state with something (like a credential)? I kind of doubt it. UPDATE: yes it's totally possible.
-   * Scaffold a `http-client-github-plugin` subproject. This will showcase an Intellij plugin that works with the HTTP
+   * DONE Scaffold a `http-client-enricher-for-github-plugin` subproject. This will showcase an Intellij plugin that works with the HTTP
      client plugin and adds customizations and quality-of-life improvements when interacting with the GitHub API.
      Specifically, I want the plugin prompt you for a personal access token (or maybe save it to some kind of Intellij
      credential store? That might be pushing it.)
    * DONE Rename the `plugin` project to `hello-world-plugin` to disambiguate it. And use the "Standalone subprojects" motto.
    * Create an example `.http` request (or a few) to the GitHub API
    * Prompt the user to enter a PAT (a modal?)
-   * What are the "lifecycle choices"? Where are the idiomatic places to plug-in to the lifecycle of the request, or maybe
+   * Set the PAT into the system so that it's available to the HTTP request. What are the "lifecycle choices"? Where are the idiomatic places to plug-in to the lifecycle of the request, or maybe
      the lifecycle of just opening the project? Can the JavaScript part of the lifecycle (pre-request handler) actually
      callback into Java or is that too late?
+   * Does intellisense work on the variables? They should autocomplete and/or not be yellow highlighted as if they are a
+     mistake.
 * [x] DONE clean up scaffolded gradle project
 * [x] DONE Runnable "do-nothing" junit tests 
 * [x] DONE First commit
@@ -63,5 +65,5 @@ General clean-ups, TODOs and things I wish to implement for this project:
     Intellij 
 * [Official example repo: `intellij-sdk-code-samples`](https://github.com/JetBrains/intellij-sdk-code-samples)
   * This is a great resource of working examples. Run them yourself and learn from them!
-* [Official Intellij Gradle plugin](https://github.com/JetBrains/gradle-intellij-plugin/)
+* [Official Gradle Intellij plugin](https://github.com/JetBrains/gradle-intellij-plugin/)
   * This should be used to build your own Intellij IDE plugin.

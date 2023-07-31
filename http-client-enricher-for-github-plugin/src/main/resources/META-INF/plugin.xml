@@ -1,0 +1,24 @@
+<idea-plugin>
+
+  <id>dgroomes.httpClientEnricherForGitHub</id>
+  <name>Http Client Enricher for GitHub</name>
+  <depends>com.intellij.modules.platform</depends>
+  <depends>com.jetbrains.restClient</depends>
+
+  <description>
+    <![CDATA[
+      NOT YET FULLY IMPLEMENTED. An Intellij plugin that enriches the HTTP Client plugin when interacting with the
+      GitHub API.<br>
+      See the project in GitHub:
+      <a href="https://github.com/dgroomes/intellij-plugin-playground">intellij-plugin-playground</a>
+    ]]>
+  </description>
+
+  <vendor url="https://github.com/dgroomes">https://github.com/dgroomes</vendor>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <toolWindow id="Http Client Enricher for GitHub Plugin:" secondary="true" icon="AllIcons.General.Modified" anchor="right"
+                factoryClass="dgroomes.HttpClientEnricherForGitHubPlugin"/>
+  </extensions>
+
+</idea-plugin>
