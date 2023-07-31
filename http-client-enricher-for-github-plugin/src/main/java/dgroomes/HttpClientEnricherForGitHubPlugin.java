@@ -23,10 +23,13 @@ public class HttpClientEnricherForGitHubPlugin implements ToolWindowFactory {
         if (!isInitialized) {
             synchronized (this) {
                 if (!isInitialized) {
+                    // This is a little hacky but it works. We find *all* open projects and initialize a global
+                    // variable in the HTTP context. I think it would be more natural to initialize this only when
+                    // a project is opened.
                     Project[] openProjects = ProjectManager.getInstance().getOpenProjects();
                     for (Project project : openProjects) {
                         HttpRequestGlobalContext instance = HttpRequestGlobalContext.getInstance(project);
-                        instance.getGlobal().set("specialNumber", "4");
+                        instance.getGlobal().set("page_size_preference", "2");
                     }
                     isInitialized = true;
                     System.out.println("HttpClientEnricherForGitHubPlugin is initialized!");
