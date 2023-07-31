@@ -1,0 +1,18 @@
+# This request is designed to exercise the 'http-client-enricher-for-github-plugin'.
+
+< {%
+let pageSize;
+const pageSizePreference = client.global.get("page_size_preference");
+
+if (pageSizePreference === undefined) {
+    client.log("Did not find a global variable 'page_size_preference'. Is the plugin not working?")
+    pageSize = 3;
+} else {
+    client.log("Found a global variable 'page_size_preference'.")
+    pageSize = pageSizePreference;
+}
+
+request.variables.set("page_size", pageSize);
+%}
+
+GET https://api.github.com/users/dgroomes/repos?per_page={{page_size}}

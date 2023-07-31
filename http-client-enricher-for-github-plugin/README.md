@@ -34,7 +34,7 @@ General clean-ups, TODOs and things I wish to implement for this project:
   Specifically, I want the plugin prompt you for a personal access token (or maybe save it to some kind of Intellij
   credential store? That might be pushing it.)
 * [x] DONE Rename the `plugin` project to `hello-world-plugin` to disambiguate it. And use the "Standalone subprojects" motto.
-* [ ] Create an example `.http` request (or a few) to the GitHub API
+* [x] DONE Create an example `.http` request (or a few) to the GitHub API
 * [ ] Prompt the user to enter a PAT (a modal?)
 * [ ] Set the PAT into the system so that it's available to the HTTP request. What are the "lifecycle choices"? Where are the idiomatic places to plug-in to the lifecycle of the request, or maybe
   the lifecycle of just opening the project? Can the JavaScript part of the lifecycle (pre-request handler) actually
