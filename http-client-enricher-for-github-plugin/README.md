@@ -25,6 +25,24 @@ Follow these instructions to build and use the plugin:
      convenient task provided by the `gradle-intellij-plugin` Gradle plugin.
 
 
+# Wish List
+
+General clean-ups, TODOs and things I wish to implement for this project:
+
+* [x] DONE Scaffold a `http-client-enricher-for-github-plugin` subproject. This will showcase an Intellij plugin that works with the HTTP
+  client plugin and adds customizations and quality-of-life improvements when interacting with the GitHub API.
+  Specifically, I want the plugin prompt you for a personal access token (or maybe save it to some kind of Intellij
+  credential store? That might be pushing it.)
+* [x] DONE Rename the `plugin` project to `hello-world-plugin` to disambiguate it. And use the "Standalone subprojects" motto.
+* [ ] Create an example `.http` request (or a few) to the GitHub API
+* [ ] Prompt the user to enter a PAT (a modal?)
+* [ ] Set the PAT into the system so that it's available to the HTTP request. What are the "lifecycle choices"? Where are the idiomatic places to plug-in to the lifecycle of the request, or maybe
+  the lifecycle of just opening the project? Can the JavaScript part of the lifecycle (pre-request handler) actually
+  callback into Java or is that too late?
+* [ ] Does intellisense work on the variables? They should autocomplete and/or not be yellow highlighted as if they are a
+  mistake.
+
+
 ## Reference
 
 * [IntelliJ Platform Plugin SDK: *Plugin Dependencies*](https://plugins.jetbrains.com/docs/intellij/plugin-dependencies.html)
