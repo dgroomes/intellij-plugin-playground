@@ -1,24 +1,24 @@
 <idea-plugin>
 
-  <id>dgroomes.httpClientEnricherForGitHub</id>
-  <name>Http Client Enricher for GitHub</name>
-  <depends>com.intellij.modules.platform</depends>
-  <depends>com.jetbrains.restClient</depends>
+    <id>dgroomes.httpClientEnricherForGitHub</id>
+    <name>HTTP Client Enricher for GitHub API</name>
+    <depends>com.intellij.modules.platform</depends>
+    <depends>com.jetbrains.restClient</depends>
 
-  <description>
-    <![CDATA[
+    <description>
+        <![CDATA[
       NOT YET FULLY IMPLEMENTED. An Intellij plugin that enriches the HTTP Client plugin when interacting with the
       GitHub API.<br>
       See the project in GitHub:
       <a href="https://github.com/dgroomes/intellij-plugin-playground">intellij-plugin-playground</a>
     ]]>
-  </description>
+    </description>
 
-  <vendor url="https://github.com/dgroomes">https://github.com/dgroomes</vendor>
+    <vendor url="https://github.com/dgroomes">https://github.com/dgroomes</vendor>
 
-  <extensions defaultExtensionNs="com.intellij">
-    <toolWindow id="Http Client Enricher for GitHub Plugin:" secondary="true" icon="AllIcons.General.Modified" anchor="right"
-                factoryClass="dgroomes.HttpClientEnricherForGitHubPlugin"/>
-  </extensions>
+    <applicationListeners>
+        <listener class="dgroomes.HttpClientEnricherForGitHubProjectManagerListener"
+                  topic="com.intellij.openapi.project.ProjectManagerListener"/>
+    </applicationListeners>
 
 </idea-plugin>

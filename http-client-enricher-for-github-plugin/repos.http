@@ -1,18 +1,22 @@
 # This request is designed to exercise the 'http-client-enricher-for-github-plugin'.
+#
+# This request gets the GitHub repositories for a user. The number of results per page is configurable via a
+# global variable that's managed by the plugin. In this way, we can explore the capabilities of plugins when it comes
+# to enriching the user experience of Intellij's built-in HTTP client.
 
 < {%
-let pageSize;
-const pageSizePreference = client.global.get("page_size_preference");
+    let pageSize;
+    const pageSizePreference = client.global.get("page_size_preference");
 
-if (pageSizePreference === undefined) {
-    client.log("Did not find a global variable 'page_size_preference'. Is the plugin not working?")
-    pageSize = 3;
-} else {
-    client.log("Found a global variable 'page_size_preference'.")
-    pageSize = pageSizePreference;
-}
+    if (pageSizePreference === undefined) {
+        client.log("Did not find a global variable 'page_size_preference'. Is the plugin not working?")
+        pageSize = 3;
+    } else {
+        client.log("Found a global variable 'page_size_preference'.")
+        pageSize = pageSizePreference;
+    }
 
-request.variables.set("page_size", pageSize);
+    request.variables.set("page_size", pageSize);
 %}
 
 GET https://api.github.com/users/dgroomes/repos?per_page={{page_size}}
