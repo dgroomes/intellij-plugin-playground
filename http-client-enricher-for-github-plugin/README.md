@@ -47,7 +47,7 @@ General clean-ups, TODOs and things I wish to implement for this project:
   callback into Java or is that too late?
 * [ ] Does intellisense work on the variables? They should autocomplete and/or not be yellow highlighted as if they are a
   mistake.
-* [ ] Use `com.intellij.openapi.startup.ProjectActivity`
+* [x] DONE Use `com.intellij.openapi.startup.ProjectActivity`
 
 
 ## Reference

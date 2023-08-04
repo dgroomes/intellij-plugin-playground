@@ -16,9 +16,8 @@
 
     <vendor url="https://github.com/dgroomes">https://github.com/dgroomes</vendor>
 
-    <applicationListeners>
-        <listener class="dgroomes.HttpClientEnricherForGitHubProjectManagerListener"
-                  topic="com.intellij.openapi.project.ProjectManagerListener"/>
-    </applicationListeners>
+    <extensions defaultExtensionNs="com.intellij">
+        <postStartupActivity implementation="dgroomes.HttpClientEnricherForGitHubProjectActivity"/>
+    </extensions>
 
 </idea-plugin>
