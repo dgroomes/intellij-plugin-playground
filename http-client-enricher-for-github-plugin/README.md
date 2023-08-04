@@ -29,10 +29,11 @@ Follow these instructions to build and use the plugin:
 
 General clean-ups, TODOs and things I wish to implement for this project:
 
-* [ ] Consider using Kotlin for plugin source code. Because Kotlin is already bundled, and because Kotlin is literally created and
+* [x] DONE Consider using Kotlin for plugin source code. Because Kotlin is already bundled, and because Kotlin is literally created and
   maintained by JetBrains, then using it in a JetBrains IDE plugin seems natural. Also, there are some Kotlin-specific
   APIs which use coroutines and other Kotlin-specific features. I don't want to go against the grain and use Java if
   JetBrains have made it a point to use Kotlin in the IDE APIs.
+   * Found a doc: [*Configuring Kotlin Support*](https://plugins.jetbrains.com/docs/intellij/using-kotlin.html)
 * [x] DONE Scaffold a `http-client-enricher-for-github-plugin` subproject. This will showcase an Intellij plugin that works with the HTTP
   client plugin and adds customizations and quality-of-life improvements when interacting with the GitHub API.
   Specifically, I want the plugin prompt you for a personal access token (or maybe save it to some kind of Intellij
@@ -46,6 +47,7 @@ General clean-ups, TODOs and things I wish to implement for this project:
   callback into Java or is that too late?
 * [ ] Does intellisense work on the variables? They should autocomplete and/or not be yellow highlighted as if they are a
   mistake.
+* [ ] Use `com.intellij.openapi.startup.ProjectActivity`
 
 
 ## Reference
