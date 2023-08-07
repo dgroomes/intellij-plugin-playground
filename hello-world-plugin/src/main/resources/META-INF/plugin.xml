@@ -17,7 +17,7 @@
 
   <extensions defaultExtensionNs="com.intellij">
     <toolWindow id="Hello World Plugin:" secondary="true" icon="AllIcons.General.Modified" anchor="right"
-                factoryClass="dgroomes.HelloWorldPlugin"/>
+                factoryClass="dgroomes.HelloWorldToolWindowFactory"/>
   </extensions>
 
 </idea-plugin>

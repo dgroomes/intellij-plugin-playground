@@ -42,6 +42,9 @@ General clean-ups, TODOs and things I wish to implement for this project:
 * [x] DONE Wire in some plugin boilerplate build stuff (Gradle, xml files, not really sure where to start...) 
 * [x] DONE implement a "hello world" plugin
 * [x] DONE Make the plugin behavior interactive. For example, it could respond to click events.
+* [x] DONE (but delete it because it was too easy and matched the docs perfectly. No need to keep it as my own code to maintain) Explore how to use secrets in Intellij. How does Intellij access the keychain? How do database passwords get stored
+  by Intellij when using its data-access tools?
+  * Docs: [Persisting Sensitive Data](https://plugins.jetbrains.com/docs/intellij/persisting-sensitive-data.html) 
 
 
 ## Reference

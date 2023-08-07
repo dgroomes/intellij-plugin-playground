@@ -6,14 +6,11 @@ import com.intellij.openapi.wm.ToolWindowFactory;
 import com.intellij.ui.content.ContentFactory;
 import org.jetbrains.annotations.NotNull;
 
-/**
- * This class should be the entrypoint (or, "core") of the Intellij plugin.
- */
-public class HelloWorldPlugin implements ToolWindowFactory {
+public class HelloWorldToolWindowFactory implements ToolWindowFactory {
 
     private final ContentFactory contentFactory;
 
-    public HelloWorldPlugin() {
+    public HelloWorldToolWindowFactory() {
         contentFactory = ContentFactory.getInstance();
     }
 

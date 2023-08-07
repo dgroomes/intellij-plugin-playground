@@ -25,5 +25,5 @@ java {
 }
 
 intellij {
-    version.set("2023.1.5")
+    version.set("2023.2")
 }
