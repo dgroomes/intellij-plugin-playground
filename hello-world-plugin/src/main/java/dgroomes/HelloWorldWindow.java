@@ -43,8 +43,6 @@ public class HelloWorldWindow {
                 messageString += "!";
                 HelloWorldWindow.this.messageLabel.setText(messageString);
                 super.mouseClicked(e);
-
-                superShortSecretsDemo();
             }
         });
         this.messageLabel.setText(messageString);
@@ -53,30 +51,5 @@ public class HelloWorldWindow {
 
     public JPanel getRootElement() {
         return root;
-    }
-
-    /**
-     * I'm just putting this here to see how this works but it really doesn't fit in this project.
-     */
-    private void superShortSecretsDemo() {
-        // The credential attributes are used to identify the secret in the credential store.
-        CredentialAttributes attrs;
-        {
-            String serviceName = CredentialAttributesKt.generateServiceName("intellij_plugin_playground", "secret_message");
-            attrs = new CredentialAttributes(serviceName);
-        }
-
-        // Save some arbitrary secret. Pretend that this is a real scenario and that this secret was user-submitted
-        // through a GUI form.
-        {
-            Credentials credentials = new Credentials("", "This is a secret!");
-            PasswordSafe.getInstance().set(attrs, credentials);
-        }
-
-        // Read the secret. Pretend that this is a real scenario and this code is from a different class.
-        {
-            String secretMessage = PasswordSafe.getInstance().getPassword(attrs);
-            log.info("The secret message is: {}", secretMessage);
-        }
     }
 }
