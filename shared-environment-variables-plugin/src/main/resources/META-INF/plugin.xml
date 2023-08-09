@@ -1,0 +1,23 @@
+<idea-plugin>
+
+    <id>dgroomes.sharedEnvironmentVariables</id>
+    <name>Shared Environment Variables</name>
+    <depends>com.intellij.modules.platform</depends>
+
+    <description>
+        <![CDATA[
+      NOT YET FULLY IMPLEMENTED. Define and share variables that can be used as environment variables in Intellij "Run
+      Configurations"<br>
+      See the project in GitHub:
+      <a href="https://github.com/dgroomes/intellij-plugin-playground">intellij-plugin-playground</a>
+    ]]>
+    </description>
+
+    <vendor url="https://github.com/dgroomes">https://github.com/dgroomes</vendor>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <toolWindow id="Shared Env Vars:" secondary="true" icon="AllIcons.General.Modified" anchor="right"
+                    factoryClass="dgroomes.SharedEnvVarsToolWindowFactory"/>
+    </extensions>
+
+</idea-plugin>

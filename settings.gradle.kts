@@ -24,3 +24,4 @@ rootProject.name = "intellij-plugin-playground"
 // You get code completion and project navigation out-of-the-box. Pretty slick!
 includeBuild("hello-world-plugin")
 includeBuild("http-client-enricher-for-github-plugin")
+includeBuild("shared-environment-variables-plugin")

@@ -1,0 +1,13 @@
+[versions]
+slf4j = "2.0.7" # SLF4J releases: http://www.slf4j.org/news.html
+gradle-intellij-plugin = "1.15.0" # Gradle Intellij Plugin releases: https://github.com/JetBrains/gradle-intellij-plugin/releases
+kotlin = "1.9.0" # Kotlin Gradle plugin releases (they match Kotlin releases): https://kotlinlang.org/docs/gradle-configure-project.html#apply-the-plugin
+
+
+[libraries]
+slf4j-api = { module = "org.slf4j:slf4j-api", version.ref = "slf4j" }
+
+
+[plugins]
+gradle-intellij-plugin = { id = "org.jetbrains.intellij", version.ref = "gradle-intellij-plugin" }
+kotlin-plugin = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
