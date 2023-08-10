@@ -15,7 +15,7 @@
         <properties>
           <alignmentX value="0.0"/>
           <autoscrolls value="false"/>
-          <text value="Hello Developer!"/>
+          <text value="Shared environment variables!"/>
         </properties>
       </component>
     </children>

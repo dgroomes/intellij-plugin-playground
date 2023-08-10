@@ -1,24 +1,17 @@
-package dgroomes;
+package dgroomes
 
-import com.intellij.openapi.project.Project;
-import com.intellij.openapi.wm.ToolWindow;
-import com.intellij.openapi.wm.ToolWindowFactory;
-import com.intellij.ui.content.ContentFactory;
-import org.jetbrains.annotations.NotNull;
+import com.intellij.openapi.project.Project
+import com.intellij.openapi.wm.ToolWindow
+import com.intellij.openapi.wm.ToolWindowFactory
+import com.intellij.ui.content.ContentFactory
 
-public class SharedEnvVarsToolWindowFactory implements ToolWindowFactory {
+class SharedEnvVarsToolWindowFactory : ToolWindowFactory {
 
-    private final ContentFactory contentFactory;
+    private val contentFactory: ContentFactory = ContentFactory.getInstance()
 
-    public SharedEnvVarsToolWindowFactory() {
-        contentFactory = ContentFactory.getInstance();
-    }
-
-    @Override
-    public void createToolWindowContent(@NotNull Project project, @NotNull ToolWindow toolWindow) {
-        var window = new SharedEnvVarsWindow();
-
-        var content = contentFactory.createContent(window.getRootElement(), "", false);
-        toolWindow.getContentManager().addContent(content);
+    override fun createToolWindowContent(project: Project, toolWindow: ToolWindow) {
+        val window = SharedEnvVarsWindow()
+        val content = contentFactory.createContent(window.rootElement, "", false)
+        toolWindow.contentManager.addContent(content)
     }
 }

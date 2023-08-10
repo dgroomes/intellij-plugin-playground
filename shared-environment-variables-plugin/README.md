@@ -33,7 +33,7 @@ Follow these instructions to build and use the plugin:
 General clean-ups, TODOs and things I wish to implement for this project:
 
 * [x] DONE Scaffold
-* [ ] IN PROGRESS Defect. When I have `SharedEnvVarsToolWindowFactory` under the `kotlin` source set, I get runtime errors like:
+* [x] DONE Defect. When I have `SharedEnvVarsToolWindowFactory` under the `kotlin` source set, I get runtime errors like:
   * ```text
     Cannot process toolwindow Shared Env Vars:
     com.intellij.diagnostic.PluginException: dgroomes.SharedEnvVarsToolWindowFactory...
@@ -48,7 +48,7 @@ General clean-ups, TODOs and things I wish to implement for this project:
     decide to redefine the source sets as just `src/` and `resources/`. I'm down for that. [Example](https://github.com/JetBrains/educational-plugin/blob/a15bccbe66bb4c6d9bccaf68d7e8a4668dc1b922/build.gradle.kts#L169).
     In general, the status quo (albeit verbose) is effective and consistent, but we're in learning and experimenting
     mode. Try new things.
-  * Make sure Kotlin works. Convert dgroomes.SharedEnvVarsToolWindowFactory to Kotlin. 
+  * DONE Make sure Kotlin works. Convert dgroomes.SharedEnvVarsToolWindowFactory to Kotlin. 
 * [ ] Do it.
 
 
