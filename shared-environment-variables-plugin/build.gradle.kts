@@ -1,5 +1,4 @@
 plugins {
-    `java-library`
     alias(libs.plugins.gradle.intellij.plugin)
     alias(libs.plugins.kotlin.plugin)
 }
@@ -11,6 +10,52 @@ repositories {
 dependencies {
     // SLF4J is already present in the Intellij Platform at runtime, so we only need it at compile time
     compileOnly(libs.slf4j.api)
+}
+
+/*
+In Java and Kotlin codebases, the default source set locations are:
+
+    src/
+    |-- main/
+    |   |-- java/
+    |   |-- kotlin/
+    |   `-- resources/
+    `-- test/
+        |-- java/
+        |-- kotlin/
+        `-- resources/
+
+But we're going to diverge a bit. Let's unnest and consolidate the source set directories:=
+
+    src/
+    resources/
+    testSrc/
+    testResources/
+
+This is a bit unconventional but for some reason I think you need for the Java and Kotlin source code to be in the same
+directory for the annotation processing (related to UI/Swing code) to work. I don't know why.
+*/
+sourceSets {
+    main {
+        java.srcDirs("src")
+        resources.srcDirs("resources")
+    }
+
+    test {
+        java.srcDirs("testSrc")
+        resources.srcDirs("testResources")
+    }
+}
+
+kotlin {
+    sourceSets {
+        main {
+            kotlin.srcDirs("src")
+        }
+        test {
+            kotlin.srcDirs("testSrc")
+        }
+    }
 }
 
 kotlin {

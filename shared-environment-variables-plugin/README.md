@@ -32,7 +32,23 @@ Follow these instructions to build and use the plugin:
 
 General clean-ups, TODOs and things I wish to implement for this project:
 
-* [ ] Scaffold
+* [x] DONE Scaffold
+* [ ] IN PROGRESS Defect. When I have `SharedEnvVarsToolWindowFactory` under the `kotlin` source set, I get runtime errors like:
+  * ```text
+    Cannot process toolwindow Shared Env Vars:
+    com.intellij.diagnostic.PluginException: dgroomes.SharedEnvVarsToolWindowFactory...
+    ...
+    Caused by: java.lang.ClassNotFoundException: dgroomes.SharedEnvVarsToolWindowFactory
+    ```
+  * Figure this out by studying another plugin, like <https://github.com/JetBrains/js-graphql-intellij-plugin>.
+  * UPDATE: It's interesting. Open source plugins like JetBrains' own "Academy" plugin, the GraphQL Java plugin and the
+    SonarLint plugin all use Java and Kotlin and all put the Java and Kotlin code in the same directory. SonarLink just
+    puts its Kotlin code in the familiar `src/main/java` directory which seems like the least fussy way to do it, but
+    on the other hand it can be a bit head-scratching to purposely go with a mislabelled directory. The other two plugin
+    decide to redefine the source sets as just `src/` and `resources/`. I'm down for that. [Example](https://github.com/JetBrains/educational-plugin/blob/a15bccbe66bb4c6d9bccaf68d7e8a4668dc1b922/build.gradle.kts#L169).
+    In general, the status quo (albeit verbose) is effective and consistent, but we're in learning and experimenting
+    mode. Try new things.
+  * Make sure Kotlin works. Convert dgroomes.SharedEnvVarsToolWindowFactory to Kotlin. 
 * [ ] Do it.
 
 
