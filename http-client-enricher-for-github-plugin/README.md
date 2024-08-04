@@ -5,7 +5,7 @@ NOT YET IMPLEMENTED (Note: this subproject needs to be split up. See the notes i
 An Intellij plugin that enriches the [HTTP Client plugin](https://www.jetbrains.com/help/idea/http-client-in-product-code-editor.html) when interacting with the GitHub API.
 
 
-# Overview
+## Overview
 
 This project is a step up from a "hello world" Intellij plugin because it has more sophisticated integration. This plugin
 codes to the APIs of the HTTP Client plugin, which is a little tenuous because the HTTP Client plugin is not
@@ -16,7 +16,7 @@ advertised for extension. However, this is a good showcase of the rich opportuni
 
 Follow these instructions to build and use the plugin:
 
-1. Use Java 17
+1. Pre-requisite: Java 17
 2. Build the plugin and run it
    * ```shell
      ./gradlew runIde
@@ -25,7 +25,7 @@ Follow these instructions to build and use the plugin:
      convenient task provided by the `gradle-intellij-plugin` Gradle plugin.
 
 
-# Wish List
+## Wish List
 
 General clean-ups, TODOs and things I wish to implement for this project:
 
