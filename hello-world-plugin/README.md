@@ -13,13 +13,27 @@ that simply says "Hello World".
 
 Follow these instructions to build and use the plugin:
 
-1. Use Java 17
+1. Pre-requisite: Java 17
+   * 
 2. Build the plugin and run it
    * ```shell
      ./gradlew runIde
      ```
    * This will start a new instance of Intellij Community Edition with the plugin installed and enabled. This is a super
      convenient task provided by the `gradle-intellij-plugin` Gradle plugin.
+
+
+## Wish List
+
+General clean-ups, TODOs and things I wish to implement for this project:
+
+* [ ] IN PROGRESS Updates for 2024
+* [ ] Consider upgrading to [version 2.0 of the Intellij Gradle Plugin](https://github.com/JetBrains/intellij-platform-gradle-plugin/releases/tag/v2.0.0)
+  The 2.0 version of the plugin is now called *Intellij Platform Gradle Plugin* instead of Gradle Intellij Plugin. Do
+  not rush into this though, it is hot off the presses and is at the intersection of lots of software (IDE, build tool,
+  langauge) so there will be rough edges. The 2.0 version coincides with [an upgrade to Java 21](https://plugins.jetbrains.com/docs/intellij/build-number-ranges.html)
+  and other major changes  in the platform.
+* [ ] Look into the "failed to run /usr/local/ .... shell " error. Very interesting. See [this page](https://intellij-support.jetbrains.com/hc/en-us/articles/15268184143890-Shell-Environment-Loading). 
 
 
 ## Reference

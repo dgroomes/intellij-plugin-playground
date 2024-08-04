@@ -16,8 +16,11 @@ java {
 
     /**
      * Use Java 17
+     *
      * Note: It's important to use the same version of Java that powers Intellij. We don't want to develop a plugin using
-     * Java 20 only to find out that Intellij can't run it because Intellij uses Java 17.
+     * Java 21 only to find out that Intellij can't run it because Intellij uses Java 17.
+     *
+     * See https://plugins.jetbrains.com/docs/intellij/build-number-ranges.html
      */
     toolchain {
         languageVersion.set(JavaLanguageVersion.of(17))
@@ -25,5 +28,5 @@ java {
 }
 
 intellij {
-    version.set("2023.2")
+    version.set("2024.1")
 }
