@@ -1,6 +1,6 @@
 [versions]
-slf4j = "2.0.13" # SLF4J releases: http://www.slf4j.org/news.html
-gradle-intellij-plugin = "1.17.4" # Gradle Intellij Plugin releases: https://github.com/JetBrains/gradle-intellij-plugin/releases
+slf4j = "2.0.16" # SLF4J releases: http://www.slf4j.org/news.html
+intellij-platform-gradle-plugin = "2.0.1" # IntelliJ Platform Gradle Plugin releases: https://github.com/JetBrains/intellij-platform-gradle-plugin/releases
 kotlin = "1.9.25" # Kotlin Gradle plugin releases (they match Kotlin releases): https://kotlinlang.org/docs/gradle-configure-project.html#apply-the-plugin
 
 
@@ -9,5 +9,5 @@ slf4j-api = { module = "org.slf4j:slf4j-api", version.ref = "slf4j" }
 
 
 [plugins]
-gradle-intellij-plugin = { id = "org.jetbrains.intellij", version.ref = "gradle-intellij-plugin" }
+intellij-platform-gradle-plugin = { id = "org.jetbrains.intellij.platform", version.ref = "intellij-platform-gradle-plugin" }
 kotlin-plugin = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }

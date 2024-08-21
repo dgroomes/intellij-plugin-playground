@@ -16,7 +16,7 @@ advertised for extension. However, this is a good showcase of the rich opportuni
 
 Follow these instructions to build and use the plugin:
 
-1. Pre-requisite: Java 17
+1. Pre-requisite: Java 21
 2. Build the plugin and run it
    * ```shell
      ./gradlew runIde
