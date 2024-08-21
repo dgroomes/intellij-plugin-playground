@@ -19,7 +19,7 @@ database connections/password. Let's explore a way to do this via a simple plugi
 
 Follow these instructions to build and use the plugin:
 
-1. Use Java 17
+1. Use Java 21
 2. Build the plugin and run it
    * ```shell
      ./gradlew runIde

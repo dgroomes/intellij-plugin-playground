@@ -1,15 +1,24 @@
 plugins {
-    alias(libs.plugins.gradle.intellij.plugin)
+    alias(libs.plugins.intellij.platform.gradle.plugin)
     alias(libs.plugins.kotlin.plugin)
 }
 
 repositories {
     mavenCentral()
+
+    intellijPlatform {
+        defaultRepositories()
+    }
 }
 
 dependencies {
     // SLF4J is already present in the Intellij Platform at runtime, so we only need it at compile time
     compileOnly(libs.slf4j.api)
+
+    intellijPlatform {
+        intellijIdeaCommunity("2024.2")
+        instrumentationTools()
+    }
 }
 
 /*
@@ -59,13 +68,7 @@ kotlin {
 }
 
 kotlin {
-
-    /**
-     * Target Java 17
-     * Note: It's important to use the same version of Java that powers the Intellij Platform at runtime. We don't want
-     * to develop a plugin using Java 20 only to find out that Intellij can't run it because Intellij runs on Java 17.
-     */
-    jvmToolchain(17)
+    jvmToolchain(21)
 }
 
 kotlin {
@@ -77,12 +80,8 @@ kotlin {
                 // runtime.
                 //
                 // See https://plugins.jetbrains.com/docs/intellij/using-kotlin.html#kotlin-standard-library
-                languageVersion = "1.8"
+                languageVersion = "1.9"
             }
         }
     }
-}
-
-intellij {
-    version.set("2023.2")
 }
