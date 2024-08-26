@@ -1,5 +1,4 @@
 plugins {
-    `java-library`
     alias(libs.plugins.intellij.platform.gradle.plugin)
     alias(libs.plugins.kotlin.plugin)
 }

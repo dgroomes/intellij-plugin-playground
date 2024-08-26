@@ -20,7 +20,15 @@ Follow these instructions to build and use the plugin:
      ./gradlew runIde
      ```
    * This will start a new instance of Intellij Community Edition with the plugin installed and enabled. This is a super
-     convenient task provided by the `gradle-intellij-plugin` Gradle plugin.
+     convenient task provided by the IntelliJ Platform Gradle Plugin.
+3. Build the plugin distribution
+   * ```shell
+     ./gradlew buildPlugin
+     ```
+   * The plugin is a ZIP file at `build/distributions/hello-world-plugin.zip`.
+4. Install the plugin
+   * In Intellij, use the command pallet to find and execute the `Install Plugin from Disk` action. Find the ZIP file
+     in the Finder window and select it. The plugin is now installed.
 
 
 ## Wish List
@@ -34,6 +42,7 @@ General clean-ups, TODOs and things I wish to implement for this project:
   language) so there will be rough edges. The 2.0 version coincides with [an upgrade to Java 21](https://plugins.jetbrains.com/docs/intellij/build-number-ranges.html)
   and other major changes  in the platform.
 * [ ] Look into the "failed to run /usr/local/ .... shell " error. Very interesting. See [this page](https://intellij-support.jetbrains.com/hc/en-us/articles/15268184143890-Shell-Environment-Loading). 
+* [x] DONE Build and install instructions
 
 
 ## Reference

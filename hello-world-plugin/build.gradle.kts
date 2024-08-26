@@ -1,5 +1,4 @@
 plugins {
-    `java-library`
     alias(libs.plugins.intellij.platform.gradle.plugin)
 }
 
@@ -38,4 +37,8 @@ java {
     toolchain {
         languageVersion.set(JavaLanguageVersion.of(21))
     }
+}
+
+intellijPlatform {
+    buildSearchableOptions = false
 }
